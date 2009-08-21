@@ -1,0 +1,9 @@
+WHITE="\[\033[1;37m\]"
+GREEN="\[\033[0;32m\]"
+CYAN="\[\033[0;36m\]"
+GRAY="\[\033[0;37m\]"
+BLUE="\[\033[0;34m\]"
+RED="\[\033[0;31m\]"
+
+export PS1="${GREEN}\u${CYAN}@${BLUE}\h ${GREEN}[${CYAN}\w${GREEN}]${RED}\$(parse_git_branch)${GRAY}$ "
+

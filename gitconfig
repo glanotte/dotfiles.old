@@ -1,14 +1,21 @@
 [user]
-	name = Ryan Bates
-	email = ryan@railscasts.com
+	name = Geoff Lanotte
+	email = glanotte@zvrs.com
 [alias]
-	co = checkout
+  co = checkout
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  who = shortlog -s --
+[apply]
+	whitespace = nowarn
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+	interactive = auto
 [core]
 	excludesfile = /Users/rbates/.gitignore
-	editor = mate -w
-[apply]
-	whitespace = nowarn

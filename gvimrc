@@ -1,5 +1,5 @@
 set guioptions-=T
-colorscheme vividchalk
+colorscheme railscasts
 
 "Size and Window Position
 set lines=40
