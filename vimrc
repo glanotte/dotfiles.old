@@ -91,6 +91,10 @@ if has("autocmd")
   filetype indent on
 endif
 
+" Comments
+noremap <silent> ,c :s/^/#<cr> 
+noremap <silent> ,u :s/^#/<cr> 
+
 " Cheat!
 command! -complete=file -nargs=+ Cheat call Cheat(<q-args>)
 function! Cheat(command)
