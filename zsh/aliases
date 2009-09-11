@@ -29,5 +29,7 @@ alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
 
+#odbc
+alias odbc='vi /Library/ODBC/odbc.ini'
 # commands starting with % for pasting from web
 alias %=' '
