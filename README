@@ -30,17 +30,19 @@ can easily be accessed (and tab completed) with the "c" command.
   c railsca<tab>
 
 I added a "vc" command which behaves as the "c" command but opens the 
-file in fim
+file in vim.
 
-  c railsca<tab>
+  vc railsca<tab>
 
 I use the ~/projects which I mapped the "p" command to
+
   p proj<tab>
 
 I added a "vp" command which is pretty much the same this as "p" but 
-it opens the file up in vim
+it opens the file up in vim.
 
   vp proj<tab>
+
 There is also an "h" command which behaves similar, but acts on the 
 home path.
 
