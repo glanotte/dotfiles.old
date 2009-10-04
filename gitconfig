@@ -18,4 +18,4 @@
 	branch = auto
 	interactive = auto
 [core]
-	excludesfile = /Users/rbates/.gitignore
+	excludesfile = /Users/glanotte/.gitignore

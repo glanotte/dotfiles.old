@@ -1,11 +1,12 @@
-Ryan Bates Dot Files
+Geoff Lanotte Dot Files
+Based heavily on Ryan Bates's dotfiles repo
 
-These are config files to set up a system the way I like it.
+These are config files to set up a system the way I like it.  The primary difference between this and Ryan's is that I use vim where Ryan prefers textmate.
 
 
 Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/glanotte/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
   # edit ~/.gitconfig and personalize it
@@ -23,11 +24,23 @@ the following command.
 
 Features
 
-I normally place all of my coding projects in ~/code, so this directory 
+I normally place all of my coding libraries in ~/code, so this directory 
 can easily be accessed (and tab completed) with the "c" command.
 
   c railsca<tab>
 
+I added a "vc" command which behaves as the "c" command but opens the 
+file in fim
+
+  c railsca<tab>
+
+I use the ~/projects which I mapped the "p" command to
+  p proj<tab>
+
+I added a "vp" command which is pretty much the same this as "p" but 
+it opens the file up in vim
+
+  vp proj<tab>
 There is also an "h" command which behaves similar, but acts on the 
 home path.
 
@@ -61,7 +74,6 @@ also use show_log and hide_log in script/console to show the log inline.
   tlog     # tail -f log/development.log
   rst      # touch tmp/restart.txt
   migrate  # rake db:migrate db:test:clone
-  scaffold # script/generate nifty_scaffold
 
 See the other aliases in ~/.zsh/aliases
 

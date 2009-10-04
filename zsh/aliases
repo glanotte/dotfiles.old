@@ -25,11 +25,15 @@ alias ss='script/server'
 alias sg='script/generate'
 alias a='autotest -rails'
 alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
 
 #odbc
 alias odbc='vi /Library/ODBC/odbc.ini'
+
+#cucumber
+alias cucnew='cucumber --tags @new'
+alias feature='script/generate feature'
+
 # commands starting with % for pasting from web
 alias %=' '
