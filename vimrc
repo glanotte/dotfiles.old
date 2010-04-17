@@ -15,6 +15,11 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
+" set the status line
+set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+let g:rails_statusline=1
+set laststatus=2
+
 " Tema
 colorscheme railscasts
  
@@ -32,7 +37,7 @@ set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
 set shiftwidth=2  " Tabs under smart indent
 set expandtab
-
+set columns=160
 
 " NERDTree
 "

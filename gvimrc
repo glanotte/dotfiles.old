@@ -2,8 +2,8 @@ set guioptions-=T
 colorscheme railscasts
 
 "Size and Window Position
-set lines=40
-set columns=120
+set lines=60
+set columns=180
 :winpos 150 0 
 
 " Load custom configuration
