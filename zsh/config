@@ -67,11 +67,11 @@ bindkey '^?' backward-delete-char
 #start ssh agent if it isn't already running
 SSH_ENV=$HOME/.ssh/environment
 
-if [ -f "${SSH_ENV}" ]; then
-     . ${SSH_ENV} > /dev/null
-     ps -x | grep "^ *${SSH_AGENT_PID}" | grep ssh-agent$ > /dev/null || {
-         start_agent;
-     }
-else
-     start_agent;
-fi
+#if [ -f "${SSH_ENV}" ]; then
+#     . ${SSH_ENV} > /dev/null
+#     ps -x | grep "^ *${SSH_AGENT_PID}" | grep ssh-agent$ > /dev/null || {
+#         start_agent;
+#     }
+#else
+#     start_agent;
+#fi

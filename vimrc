@@ -94,6 +94,12 @@ map <F5> :ruby @finder = nil<cr>
 " Autoindentación
 if has("autocmd")
   filetype indent on
+
+  " Restore cursor position
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 endif
 
 " Comments

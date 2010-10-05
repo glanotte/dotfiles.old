@@ -38,7 +38,6 @@ alias feature='script/generate feature'
 alias %=' '
 
 #rvm
-alias ruby18='rvm use ruby-1.8.6-head@reg'
-alias ruby19='rvm use ruby-1.9.2-head'
-alias rails3='rvm use ruby-1.9.2-head@rails3'
-alias jruby='rvm use jruby-1.5.0.RC1'
+alias ruby18='rvm use ruby-1.8.7'
+alias ruby19='rvm use ruby-1.9.2'
+alias jruby='rvm use jruby'
