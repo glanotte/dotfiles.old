@@ -110,7 +110,7 @@ noremap <silent> ,u :s/^#/<cr>
 command! -complete=file -nargs=+ Cheat call Cheat(<q-args>)
 function! Cheat(command)
 	botright new
-	setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+	setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap nobackup
 	execute 'silent $read !cheat '.escape(a:command,'%#')
 	setlocal nomodifiable
 	1
