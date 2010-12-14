@@ -9,8 +9,8 @@ export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;33'
 
 export EDITOR='/usr/bin/vi'
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export MANPATH="/usr/local/man:/usr/local/mysql/man:$MANPATH"
 
 fpath=(~/.zsh/functions $fpath)
 
