@@ -23,12 +23,13 @@ alias 'git co'='git checkout'
 alias sc='script/console'
 alias ss='script/server'
 alias sg='script/generate'
-alias a='autotest -rails'
+alias a='autotest'
 alias tlog='tail -f log/development.log'
 alias migrate='rake db:migrate db:test:clone'
+alias mreset='rake db:migrate:reset db:test:clone'
 
 #odbc
-alias odbc='vi /Library/ODBC/odbc.ini'
+alias odbc='vi /usr/local/etc/odbc.ini'
 
 #cucumber
 alias cucnew='cucumber --tags @new'
@@ -39,5 +40,6 @@ alias %=' '
 
 #rvm
 alias ruby18='rvm use ruby-1.8.7'
-alias ruby19='rvm use ruby-1.9.2'
+alias ruby19='rvm use ruby-1.9.2-p136'
+alias golcc='rvm use ruby-1.9.2-p136@lcc'
 alias jruby='rvm use jruby'
