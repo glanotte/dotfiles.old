@@ -26,6 +26,7 @@ alias sg='script/generate'
 alias a='autotest -rails'
 alias tlog='tail -f log/development.log'
 alias migrate='rake db:migrate db:test:clone'
+alias migreset='rake db:migrate:reset db:test:clone'
 
 #odbc
 alias odbc='vi /Library/ODBC/odbc.ini'
