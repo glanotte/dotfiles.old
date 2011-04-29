@@ -195,4 +195,4 @@ function! ToRSpecContext()
 
 " Top-level classes
   silent! %s/class \(.\+\)Test < .*::TestCase/describe \1 do/
-
+endfunction
