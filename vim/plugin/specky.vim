@@ -2,18 +2,23 @@
 "
 " Specky!
 " Mahlon E. Smith <mahlon@martini.nu>
-" $Id: specky.vim 49 2008-08-15 13:32:40Z mahlon $
+" $Id: specky.vim,v 763cef799c74 2010/12/18 08:56:09 mahlon $
 "
 
-" }}}
+
 " Hook up the functions to the user supplied key bindings. {{{
 "
 if exists( 'g:speckySpecSwitcherKey' )
 	execute 'map ' . g:speckySpecSwitcherKey . ' :call <SID>SpecSwitcher()<CR>'
+"	map &g:speckySpecSwitcherKey <SID>SpecSwitcher()
 endif
 
 if exists( 'g:speckyQuoteSwitcherKey' )
 	execute 'map ' . g:speckyQuoteSwitcherKey . ' :call <SID>QuoteSwitcher()<CR>'
+endif
+
+if exists( 'g:speckyBannerKey' )
+	execute 'map ' . g:speckyBannerKey . ' :call <SID>MakeBanner()<CR>'
 endif
 
 if exists( 'g:speckyRunSpecKey' )
@@ -24,11 +29,10 @@ if exists( 'g:speckyRunRdocKey' )
 	execute 'map ' . g:speckyRunRdocKey . ' :call <SID>RunRdoc()<CR>'
 endif
 
-
 if exists( 'specky_loaded' )
 	finish
 endif
-let specky_loaded = '$Rev: 92 $'
+let specky_loaded = '$Rev: 763cef799c74 $'
 
 
 "}}}
@@ -39,6 +43,7 @@ execute 'menu ' . s:menuloc . '.&Jump\ to\ code/spec :call <SID>SpecSwitcher()<C
 execute 'menu ' . s:menuloc . '.Run\ &spec :call <SID>RunSpec()<CR>'
 execute 'menu ' . s:menuloc . '.&RDoc\ lookup :call <SID>RunRdoc()<CR>'
 execute 'menu ' . s:menuloc . '.Rotate\ &quote\ style :call <SID>QuoteSwitcher()<CR>'
+execute 'menu ' . s:menuloc . '.Make\ a\ &banner :call <SID>MakeBanner()<CR>'
 
 
 " }}}
@@ -53,11 +58,11 @@ execute 'menu ' . s:menuloc . '.Rotate\ &quote\ style :call <SID>QuoteSwitcher()
 "
 function! <SID>SpecSwitcher()
 
-	" If we aren't in a ruby file (specs are ruby-mode too) then we probably
-	" don't care too much about this function.
+	" If we aren't in a ruby or rspec file then we probably don't care
+	" too much about this function.
 	"
-	if &ft != 'ruby'
-		call s:err( "Not currently in ruby-mode." )
+	if &ft != 'ruby' && &ft != 'rspec'
+		call s:err( "Not currently in ruby or rspec mode." )
 		return
 	endif
 
@@ -94,7 +99,6 @@ function! <SID>SpecSwitcher()
 	endif
 
 	" Restore the original path.
-	"
 	execute 'set path=' . l:orig_path
 endfunction
 
@@ -113,29 +117,42 @@ function! <SID>QuoteSwitcher()
 
 	if l:type == '"'
 		" Double quote to single
-		"
-		execute ":normal viWs'" . l:word . "'"
+		execute ":normal viWc'" . l:word . "'"
 
 	elseif l:type == "'"
-		if &ft == "ruby"
+		if &ft == 'ruby' || &ft == 'rspec'
 			" Single quote to symbol
-			"
-			execute ':normal viWs:' . l:word
+			execute ':normal viWc:' . l:word
 		else
 			" Single quote to double
-			"
-			execute ':normal viWs"' . l:word . '"'
+			execute ':normal viWc"' . l:word . '"'
 		end
 
 	else
 		" Whatever to double quote
-		"
-		execute ':normal viWs"' . l:word . '"'
+		execute ':normal viWc"' . l:word . '"'
 	endif
 
 	" Move the cursor back into the cl:word
-	"
 	call cursor( 0, getpos('.')[2] - 1 )
+endfunction
+
+
+" }}}
+" MakeBanner() {{{
+"
+" Create a quick banner from the current line's text.
+"
+function! <SID>MakeBanner()
+	let l:banner_text = toupper(join( split( getline('.'), '\zs' ), ' ' ))
+	let l:banner_text = substitute( l:banner_text, '^\s\+', '', '' )
+	let l:sep = repeat( '#', &textwidth == 0 ? 72 : &textwidth )
+	let l:line = line('.')
+
+	call setline( l:line, l:sep )
+ 	call append( l:line, [ '### ' . l:banner_text, l:sep ] )
+	execute 'normal 3=='
+	call cursor( l:line + 3, 0 )
 endfunction
 
 
@@ -155,9 +172,10 @@ function! <SID>RunSpec()
 		silent call <SID>SpecSwitcher()
 	endif
 
-	let l:spec   = bufname('%')
-	let l:buf    = 'specky:specrun'
-	let l:bufnum = bufnr( l:buf )
+	let l:spec    = bufname('%')
+	let l:buf     = 'specky:specrun'
+	let l:bufnum  = bufnr( l:buf )
+	let l:specver = (exists( 'g:speckySpecVersion') && g:speckySpecVersion == 1) ? 1 : 2
 
 	" Squash the old buffer, if it exists.
 	"
@@ -165,9 +183,15 @@ function! <SID>RunSpec()
 		execute 'bd! ' . l:buf
 	endif
 
-	execute ( exists('g:speckyVertSplit') ? 'vert new ' : 'new ') . l:buf
-	setlocal buftype=nofile bufhidden=delete noswapfile filetype=specrun
-	set foldtext='--'.getline(v:foldstart).v:folddashes
+	execute <SID>NewWindowCmd() . l:buf
+	setlocal buftype=nofile bufhidden=delete noswapfile
+	if ( l:specver == 1 )
+		setlocal filetype=specrun1
+		set foldtext='--'.getline(v:foldstart).v:folddashes
+	else
+		setlocal filetype=specrun
+		set foldtext=_formatFoldText()
+	endif
 
 	" Set up some convenient keybindings.
 	"
@@ -180,20 +204,19 @@ function! <SID>RunSpec()
 	" Default cmd for spec
 	"
 	if !exists( 'g:speckyRunSpecCmd' )
-		let g:speckyRunSpecCmd = 'spec -fs'
+		let g:speckyRunSpecCmd = l:specver == 1 ? 'spec -fs' : 'rspec'
 	endif
 
 	" Call spec and gather up the output
 	"
-	let l:cmd    =  g:speckyRunSpecCmd . ' ' . l:spec
+	let l:cmd =  g:speckyRunSpecCmd . ' ' . l:spec
+	call append( line('$'), 'Output of: ' . l:cmd  )
+	call append( line('$'), '' )
 	let l:output = system( l:cmd )
-	call append( 0, split( l:output, "\n" ) )
-	call append( 0, '' )
-	call append( 0, 'Output of: ' . l:cmd  )
+	call append( line('$'), split( l:output, "\n" ) )
 	normal gg
 
 	" Lockdown the buffer
-	"
 	setlocal nomodifiable
 endfunction
 
@@ -208,8 +231,8 @@ function! <SID>RunRdoc()
 	" If we aren't in a ruby file (specs are ruby-mode too) then we probably
 	" don't care too much about this function.
 	"
-	if ( &ft != 'ruby' && &ft != 'rdoc' )
-		call s:err( "Not currently in ruby-mode." )
+	if ( &ft != 'ruby' && &ft != 'rdoc' && &ft != 'rspec' )
+		call s:err( "Not currently in a rubyish-mode." )
 		return
 	endif
 
@@ -240,11 +263,10 @@ function! <SID>RunRdoc()
 		execute 'bd! ' . l:buf
 	endif
 
-	" With multiple matches, strip the comams from the cWORD.
-	"
+	" With multiple matches, strip the commas from the cWORD.
 	let l:word = substitute( l:word, ',', '', 'eg' )
 
-	execute ( exists('g:speckyVertSplit') ? 'vert new ' : 'new ') . l:buf
+	execute <SID>NewWindowCmd() . l:buf
 	setlocal buftype=nofile bufhidden=delete noswapfile filetype=rdoc
 	nnoremap <silent> <buffer> q :close<CR>
 
@@ -256,19 +278,24 @@ function! <SID>RunRdoc()
 	execute 'normal gg'
 
 	" Lockdown the buffer
-	"
-	execute 'setlocal nomodifiable'
+	setlocal nomodifiable
 endfunction
 
 
 " }}}
 " FindSpecError( detail ) {{{
 "
+" detail:
+" 	1  -- find the next failure
+" 	-1 -- find the previous failure
+" 	0  -- expand the current failure's detail
+"
 " Convenience searches for jumping to spec failures.
 "
 function! <SID>FindSpecError( detail )
 
-	let l:err_str = '(FAILED\|ERROR - \d\+)$'
+	let l:specver = (exists( 'g:speckySpecVersion') && g:speckySpecVersion == 1) ? 1 : 2
+	let l:err_str = l:specver == 1 ? '(FAILED\|ERROR - \d\+)$' : 'FAILED - #\d\+)$'
 
 	if ( a:detail == 0 )
 		" Find the detailed failure text for the current failure line,
@@ -276,7 +303,11 @@ function! <SID>FindSpecError( detail )
 		"
 		let l:orig_so = &so
 		set so=100
-		call search('^' . matchstr(getline('.'),'\d\+)$') )
+		if l:specver == 1
+			call search('^' . matchstr(getline('.'),'\d\+)$') )
+		else
+			call search('^FAILURE - #' . matchstr(getline('.'),'\d\+)$') )
+		endif
 		if has('folding')
 			silent! normal za
 		endif
@@ -293,6 +324,39 @@ function! <SID>FindSpecError( detail )
 		nohl
 
 	endif
+endfunction
+
+
+" }}}
+" NewWindowCmd() {{{
+"
+" Return the stringified command for a new window, based on user preferences.
+"
+function! <SID>NewWindowCmd()
+	if ( ! exists('g:speckyWindowType' ) )
+		return 'tabnew '
+	endif
+
+	if ( g:speckyWindowType == 1 )
+		return 'new '
+	elseif ( g:speckyWindowType == 2 )
+		return 'vert new '
+	else
+		return 'tabnew '
+	endif
+endfunction
+
+
+" }}}
+" _formatFoldText() {{{
+"
+" Make folded failure detail visually appealing when folded.
+"
+function! _formatFoldText()
+	let l:fold = tolower( getline(v:foldstart) )
+	let l:fold = substitute( l:fold, '-', 'detail', 'e' )
+	let l:fold = '--[ ' . substitute( l:fold, ')', ' ]', 'e' )
+	return l:fold
 endfunction
 
 
