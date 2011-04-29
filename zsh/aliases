@@ -41,6 +41,8 @@ alias %=' '
 #rvm
 alias ruby18='rvm use ruby-1.8.7'
 alias ruby19='rvm use ruby-1.9.2'
+
 alias golcc='rvm use ruby-1.9.2@lcc && cd ~/code/lcc'
 alias goeas='rvm use 1.9.2@eas && cd ~/projects/eas.champvrs.com'
+
 alias jruby='rvm use jruby'
