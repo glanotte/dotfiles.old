@@ -21,7 +21,7 @@ let g:rails_statusline=1
 set laststatus=2
 
 " Tema
-colorscheme railscasts
+colorscheme vividchalk
  
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>

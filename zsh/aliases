@@ -46,3 +46,8 @@ alias golcc='rvm use ruby-1.9.2@lcc && cd ~/code/lcc'
 alias goeas='rvm use 1.9.2@eas && cd ~/projects/eas.champvrs.com'
 
 alias jruby='rvm use jruby'
+
+#firefox development
+
+alias ffdev='/Applications/Firefox.app/Contents/MacOS/firefox-bin -no-remote -P Dev &'
+alias ffdefault='/Applications/Firefox.app/Contents/MacOS/firefox-bin -no-remote -P default &'
