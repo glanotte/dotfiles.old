@@ -44,7 +44,9 @@ alias ruby19='rvm use ruby-1.9.2'
 
 alias golcc='rvm use ruby-1.9.2@lcc && cd ~/code/lcc'
 alias goeas='rvm use 1.9.2@eas && cd ~/projects/eas.champvrs.com'
-
+alias golap='rvm use ruby-1.9.2-p180@lap && cd ~/code/liftaprayer'
+alias gocms='rvm use ruby-1.9.2-p180@cms && cd ~/code/cms'
+alias goem='rvm use ruby-1.9.2-p180@em && cd ~/code/'
 alias jruby='rvm use jruby'
 
 #firefox development
