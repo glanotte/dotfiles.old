@@ -17,7 +17,6 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias 'git co'='git checkout'
 
 # rails
 alias sc='script/console'
@@ -41,12 +40,6 @@ alias %=' '
 #rvm
 alias ruby18='rvm use ruby-1.8.7'
 alias ruby19='rvm use ruby-1.9.2'
-
-alias golcc='rvm use ruby-1.9.2@lcc && cd ~/code/lcc'
-alias goeas='rvm use 1.9.2@eas && cd ~/projects/eas.champvrs.com'
-alias golap='rvm use ruby-1.9.2-p180@lap && cd ~/code/liftaprayer'
-alias gocms='rvm use ruby-1.9.2-p180@cms && cd ~/code/cms'
-alias goem='rvm use ruby-1.9.2-p180@em && cd ~/code/'
 alias jruby='rvm use jruby'
 
 #firefox development
