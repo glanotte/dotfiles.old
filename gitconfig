@@ -18,7 +18,7 @@
 	branch = auto
 	interactive = auto
 [core]
-	excludesfile = /Users/geofflanotte/.gitignore
+	excludesfile = ~/.gitignore
 [github]
 	user = glanotte
 	token = 4b32308230fd5303580e199779df7f23

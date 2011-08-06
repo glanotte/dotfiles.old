@@ -1,5 +1,5 @@
 set guioptions-=T
-colorscheme railscasts
+colorscheme geoff_gui
 
 if has("gui_macvim")
   " Fullscreen takes up entire screen
