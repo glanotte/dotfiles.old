@@ -63,6 +63,9 @@ let g:speckyRunRdocCmd = "fri -L -f plain"
 "Línea de cursor
 set cursorline
 
+"syntax for scss
+au BufRead,BufNewFile *.scss set filetype=scss
+
 set number
 set hlsearch
 
