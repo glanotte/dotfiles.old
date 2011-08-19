@@ -23,6 +23,9 @@ set laststatus=2
 " Tema
 colorscheme vividchalk
  
+" configure pathogen
+call pathogen#infect()
+
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
