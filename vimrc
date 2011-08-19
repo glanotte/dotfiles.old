@@ -50,17 +50,7 @@ map <leader>n :NERDTreeToggle <cr>
 map <leader>tl :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 
-" Specky
-let g:speckyQuoteSwitcherKey = "<C-S>'"
-let g:speckyRunRdocKey = "<C-S>r"
-let g:speckySpecSwitcherKey = "<C-S>x"
-let g:speckyRunSpecKey = "<C-S>s"
-let g:speckyRunSpecCmd = "spec -fs"
-let g:speckyRunRdocCmd = "fri -L -f plain"
-"let g:speckyVertSplit = 1
-"
-
-"Línea de cursor
+"Love the cursor line
 set cursorline
 
 "syntax for scss
@@ -84,10 +74,7 @@ endif
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 
-" Refresh FuzzyFinder
-map <F5> :ruby @finder = nil<cr>
-
-" Autoindentación
+" Auto Indent
 if has("autocmd")
   filetype indent on
 
