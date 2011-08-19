@@ -46,3 +46,9 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
+[submodule "vim/bundle/jasmine"]
+	path = vim/bundle/jasmine
+	url = https://github.com/claco/jasmine.vim.git
+[submodule "vim/bundle/a"]
+	path = vim/bundle/a
+	url = https://github.com/vim-scripts/a.vim.git
