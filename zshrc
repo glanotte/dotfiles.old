@@ -7,5 +7,4 @@
 
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && .  ~/.localrc
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
