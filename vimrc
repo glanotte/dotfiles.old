@@ -26,6 +26,10 @@ colorscheme vividchalk
 " configure pathogen
 call pathogen#infect()
 
+" show a dot for trailing whitespace
+set listchars=tab:▸\ ,trail:·
+set list
+
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
