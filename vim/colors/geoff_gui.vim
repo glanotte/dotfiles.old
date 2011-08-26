@@ -38,7 +38,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "railscasts"
+let g:colors_name = "geoff_gui"
 
 hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
@@ -84,6 +84,7 @@ highlight rubyPseudoVariable        guifg=#FFC66D ctermfg=221
 highlight rubyStringDelimiter       guifg=#A5C261 ctermfg=143
 highlight rubyMethod                guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 highlight railsMethod               guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
+highlight rubyBlock                 guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 
 highlight xmlTag                    guifg=#E8BF6A ctermfg=179
 highlight xmlTagName                guifg=#E8BF6A ctermfg=179
