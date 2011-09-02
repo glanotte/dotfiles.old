@@ -36,6 +36,7 @@ alias rp='_rails_command plugin'
 alias ss='_rails_command server'
 alias rsd='_rails_command server --debugger'
 alias devlog='tail -f log/development.log'
+alias tohaml="for i in `find app/views -name '*.erb'` ; do html2haml -e $i ${i%erb}haml ; rm $i ; done"
 
 #odbc
 alias odbc='vi /usr/local/etc/odbc.ini'
