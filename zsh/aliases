@@ -8,17 +8,18 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias git=hub
+alias gl='hub pull'
+alias gp='hub push'
+alias gd='hub diff'
+alias gc='hub commit'
+alias gca='hub commit -a'
+alias gco='hub checkout'
+alias gb='hub branch'
+alias gs='hub status'
+alias grm="hub status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-
+#Rails goodies
 function _rails_command () {
   if [ -e "script/server" ]; then
 ruby script/$@
