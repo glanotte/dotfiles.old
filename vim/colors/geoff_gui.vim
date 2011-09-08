@@ -61,7 +61,8 @@ highlight Macro                     guifg=#CC7833 ctermfg=173 cterm=NONE
 highlight LineNr                    guifg=#2B2B2B ctermfg=159 guibg=#C0C0FF
 highlight Number                    guifg=#A5C261 ctermfg=107
 highlight PreProc                   guifg=#E6E1DC ctermfg=103
-highlight Search                    guifg=NONE ctermfg=NONE guibg=#2b2b2b ctermbg=235 gui=italic cterm=underline
+highlight Search                    guifg=#FFFF00 ctermfg=yellow guibg=#2b2b2b ctermbg=235 cterm=underline gui=underline 
+highlight IncSearch                 guifg=#F88017 ctermfg=103 guibg=#2b2b2b ctermbg=235 gui=underline cterm=underline
 highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15
@@ -84,7 +85,7 @@ highlight rubyPseudoVariable        guifg=#FFC66D ctermfg=221
 highlight rubyStringDelimiter       guifg=#A5C261 ctermfg=143
 highlight rubyMethod                guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 highlight railsMethod               guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
-highlight rubyBlock                 guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
+"highlight rubyBlock                 guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 
 highlight xmlTag                    guifg=#E8BF6A ctermfg=179
 highlight xmlTagName                guifg=#E8BF6A ctermfg=179
