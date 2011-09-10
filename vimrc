@@ -20,7 +20,7 @@ set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statu
 let g:rails_statusline=1
 set laststatus=2
 
-" Tema
+" Color for non-gui vim
 colorscheme vividchalk
  
 " configure pathogen
