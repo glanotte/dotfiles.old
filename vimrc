@@ -194,8 +194,8 @@ if has("autocmd")
 endif
 
 " Comments
-noremap <silent> ,c :s/^/#<cr> 
-noremap <silent> ,u :s/^#/<cr> 
+" noremap <silent> ,c :s/^/#<cr> 
+" noremap <silent> ,u :s/^#/<cr> 
 
 " Cheat!
 command! -complete=file -nargs=+ Cheat call Cheat(<q-args>)
