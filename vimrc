@@ -196,6 +196,8 @@ endif
 " Comments
 " noremap <silent> ,c :s/^/#<cr> 
 " noremap <silent> ,u :s/^#/<cr> 
+autocmd FileType ruby set commentstring=#\ %s
+
 
 " Cheat!
 command! -complete=file -nargs=+ Cheat call Cheat(<q-args>)
