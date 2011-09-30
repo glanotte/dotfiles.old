@@ -61,3 +61,6 @@
 [submodule "vim/bundle/vim-rvm"]
 	path = vim/bundle/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
+[submodule "vim/bundle/vim-python"]
+	path = vim/bundle/vim-python
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
