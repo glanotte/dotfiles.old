@@ -197,6 +197,7 @@ endif
 " noremap <silent> ,c :s/^/#<cr> 
 " noremap <silent> ,u :s/^#/<cr> 
 autocmd FileType ruby set commentstring=#\ %s
+autocmd FileType python set commentstring=#\ %s
 
 
 " Cheat!
