@@ -21,7 +21,7 @@ let g:rails_statusline=1
 set laststatus=2
 
 " Color for non-gui vim
-colorscheme vividchalk
+colorscheme geoff_gui
  
 " configure pathogen
 call pathogen#infect()
