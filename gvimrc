@@ -31,3 +31,5 @@ if filereadable(my_home . '.gvimrc.local')
 	source ~/.gvimrc.local
 endif
 
+"Love the cursor line
+set cursorline
