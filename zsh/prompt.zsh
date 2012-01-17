@@ -14,9 +14,18 @@ function pair_info {
 
 function git_prompt_info {
   local ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "%{$reset_color%}@%{$fg[blue]%}${ref#refs/heads/}"
+  fi
+}
+
+function git_status {
+  local ref=$(git symbolic-ref HEAD 2> /dev/null)
   local gitst="$(git status 2> /dev/null)"
   local pairname=$(git config --get user.initials)
   if [[ ${pairname} == 'ch' ]]; then
+    pairname=''
+  elif [[ ${pairname} == '' ]]; then
     pairname=''
   else
     pairname=" ($pairname)"
@@ -39,8 +48,19 @@ function git_prompt_info {
   fi
 
   if [[ -n $ref ]]; then
-    echo "%{$fg_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus$pairname"
+    echo "%{$reset_color%}$gitstatus$pairname "
   fi
 }
 
-PROMPT='${PR_MAGENTA}%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
+#PROMPT='${PR_MAGENTA}%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
+
+project_pwd() {
+  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+}
+
+ruby_version() {
+  echo " $(ruby -v | awk '{print $2}')"
+}
+
+export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}>%{\e[0m%} '
+export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(ruby_version)$(git_prompt_info)%{\e[0m%}'
