@@ -195,6 +195,7 @@ endif
 " noremap <silent> ,u :s/^#/<cr> 
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType python set commentstring=#\ %s
+autocmd FileType yaml set commentstring=#\ %s
 
 
 " Cheat!
