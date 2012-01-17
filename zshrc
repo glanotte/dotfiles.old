@@ -1,3 +1,4 @@
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/colors.zsh
