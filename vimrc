@@ -65,7 +65,10 @@ map <leader>n :NERDTreeToggle <cr>
 map <leader>tl :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 
+"Love the cursor line
+" set cursorline
 "syntax for scss
+
 au BufRead,BufNewFile *.scss set filetype=scss
 
 set number
