@@ -71,7 +71,7 @@ let Tlist_Use_Right_Window = 1
 
 au BufRead,BufNewFile *.scss set filetype=scss
 
-set number
+set rnu
 set hlsearch
 
 "Adding #{} to AutoClose Plugin and activating it for String interpolation
@@ -118,6 +118,7 @@ function! ShowRoutes()
 " Delete empty trailing line
   :normal dd
 endfunction
+
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
