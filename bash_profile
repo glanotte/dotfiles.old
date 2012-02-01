@@ -12,3 +12,5 @@ fi
 if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
+
+[[ -s "/Users/geofflanotte/.rvm/scripts/rvm" ]] && source "/Users/geofflanotte/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
