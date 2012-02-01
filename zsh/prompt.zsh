@@ -15,7 +15,7 @@ function pair_info {
 function git_prompt_info {
   local ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [[ -n $ref ]]; then
-    echo "%{$reset_color%}@%{$fg[blue]%}${ref#refs/heads/}"
+    echo "%{$reset_color%}/%{$fg[blue]%}${ref#refs/heads/}"
   fi
 }
 
@@ -58,9 +58,9 @@ project_pwd() {
   echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
 }
 
-ruby_version() {
-  echo " $(ruby -v | awk '{print $2}')"
+rvm_info() {
+  echo " $(~/.rvm/bin/rvm-prompt)"
 }
 
 export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}>%{\e[0m%} '
-export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(ruby_version)$(git_prompt_info)%{\e[0m%}'
+export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)%{\e[0m%}'
