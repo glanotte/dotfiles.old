@@ -4,6 +4,10 @@ let mapleader = ","
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
  
+" Store temporary files in a central spot, thanks to Gary Bernhardt
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 " Ignore extension files
 set wildignore=*.dll,*.o,*.obj,*.bak,*.pyc,*.swp " ignore these"
 
@@ -55,6 +59,9 @@ au BufRead,BufNewFile *.scss set filetype=scss
 set rnu
 
 set hlsearch
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
 
 "Adding #{} to AutoClose Plugin and activating it for String interpolation
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'} 
