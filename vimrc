@@ -12,9 +12,12 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set wildignore=*.dll,*.o,*.obj,*.bak,*.pyc,*.swp " ignore these"
 
 " set the status line
-set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+" set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+" Configure powerline
+let g:Powerline_symbols = 'unicode'
 let g:rails_statusline=1
 set laststatus=2
+set encoding=utf-8
 
 " Color for non-gui vim
 colorscheme geoff_gui
