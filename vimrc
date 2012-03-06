@@ -1,6 +1,10 @@
+" configure pathogen
+call pathogen#infect()
+
 "Set leader key
 let mapleader = ","
 
+filetype plugin indent on
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
  
@@ -22,9 +26,6 @@ set encoding=utf-8
 " Color for non-gui vim
 colorscheme geoff_gui
  
-" configure pathogen
-call pathogen#infect()
-
 " show a dot for trailing whitespace
 set listchars=tab:▸\ ,trail:·
 set list
