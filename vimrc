@@ -4,6 +4,9 @@ call pathogen#infect()
 "Set leader key
 let mapleader = ","
 
+"Setting to allow clipboard access with p and y
+set clipboard=unnamed
+
 filetype plugin indent on
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
@@ -73,6 +76,7 @@ map Q gq
 "Adding #{} to AutoClose Plugin and activating it for String interpolation
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'} 
 let g:AutoCloseProtectedRegions = ["Character"] 
+let g:AutoCloseExpandEnterOn = ""
 
 "Load custom configuration
 let my_home = expand("$HOME/")
