@@ -28,7 +28,7 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
 [merge]
-  tool = vimdiff
+	tool = vimdiff
 
 [apply]
 	whitespace = nowarn
@@ -39,3 +39,5 @@
 	interactive = auto
 [core]
 	excludesfile = ~/.gitignore
+[diff]
+	tool = vimdiff
