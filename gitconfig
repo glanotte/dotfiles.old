@@ -41,3 +41,5 @@
 	excludesfile = ~/.gitignore
 [diff]
 	tool = vimdiff
+[github]
+	user = glanotte
