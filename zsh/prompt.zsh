@@ -62,5 +62,5 @@ rvm_info() {
   echo " $(~/.rvm/bin/rvm-prompt)"
 }
 
-export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}>%{\e[0m%} '
+export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
 export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)%{\e[0m%}'
