@@ -51,7 +51,21 @@ function git_status {
     echo "%{$reset_color%}$gitstatus$pairname "
   fi
 }
-
+todo(){
+  if $(which todo.sh &> /dev/null)
+  then
+    num=$(echo $(todo.sh ls +next | wc -l))
+    let todos=num-2
+    if [ $todos != 0 ]
+    then
+      echo "$todos"
+    else
+      echo ""
+    fi
+  else
+    echo ""
+  fi
+}
 #PROMPT='${PR_MAGENTA}%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
 
 project_pwd() {
@@ -63,4 +77,4 @@ rvm_info() {
 }
 
 export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
-export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)%{\e[0m%}'
+export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)${PR_GREEN} +next:($(todo))%{\e[0m%}'
