@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/vim-cocoa"]
+	path = vim/bundle/vim-cocoa
+	url = https://github.com/vim-scripts/cocoa.vim.git
