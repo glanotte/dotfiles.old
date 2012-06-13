@@ -28,7 +28,10 @@ set encoding=utf-8
 
 " Color for non-gui vim
 colorscheme geoff_gui
- 
+
+" Set the title string to display the full path
+set title
+set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 " show a dot for trailing whitespace
 set listchars=tab:▸\ ,trail:·
 set list
