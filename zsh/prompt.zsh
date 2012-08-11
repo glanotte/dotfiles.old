@@ -53,7 +53,7 @@ function git_status {
 }
 
 project_pwd() {
-  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/"
 }
 
 rvm_info() {
@@ -61,4 +61,4 @@ rvm_info() {
 }
 
 export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
-export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)${PR_GREEN}'
+export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)${PR_WHITE}'
