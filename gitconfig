@@ -28,18 +28,18 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [github]
-	user = glanotte
+  user = glanotte
