@@ -58,7 +58,8 @@ project_pwd() {
 }
 
 rvm_info() {
-  echo " $(~/.rvm/bin/rvm-prompt)"
+  # shortens the rvm prompt output
+  echo " $(~/.rvm/bin/rvm-prompt)" | sed -e "s/ruby-\(.*\)-p[^@]*/m\\1/" -e "s/jruby-\(.*\)/j\\1/"
 }
 
 export PROMPT=$'$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
