@@ -39,30 +39,11 @@ alias ss='_rails_command server'
 alias rsd='_rails_command server --debugger'
 alias devlog='tail -f log/development.log'
 
-#odbc
-alias odbc='vi /usr/local/etc/odbc.ini'
-
 #cucumber
 alias feature='_rails_command generate feature'
 
 # commands starting with % for pasting from web
 alias %=' '
 
-#firefox development
-
-alias ffdev='/Applications/Firefox.app/Contents/MacOS/firefox-bin -no-remote -P Dev &'
-alias ffdefault='/Applications/Firefox.app/Contents/MacOS/firefox-bin -no-remote -P default &'
-
 #tmux
 alias tmux="TERM=screen-256color-bce tmux"
-
-# todo.sh: https://github.com/ginatrapani/todo.txt-cli
-function t() {
-  if [ $# -eq 0 ]; then
-todo.sh ls
-  else
-todo.sh $*
-  fi
-}
-
-alias n="t ls +next"
