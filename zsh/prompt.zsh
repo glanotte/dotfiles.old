@@ -53,7 +53,8 @@ function git_status {
 }
 
 project_pwd() {
-  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/"
+  # shortens the path that is deplayed and compacts the home, code and projects directory
+  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/projects\/\([^\/]*\)/p\/\\1/" -e "s/code\/\([^\/]*\)/c\/\\1/"
 }
 
 rvm_info() {
