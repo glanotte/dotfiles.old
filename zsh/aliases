@@ -47,3 +47,6 @@ alias %=' '
 
 #tmux
 alias tmux="TERM=screen-256color-bce tmux"
+
+#bundler
+alias be="bundle exec"
