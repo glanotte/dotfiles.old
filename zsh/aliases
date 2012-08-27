@@ -50,3 +50,6 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 #bundler
 alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
+alias bo="bundle outdated"
