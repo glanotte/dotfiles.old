@@ -1,6 +1,6 @@
-[user]
-	name = Geoff Lanotte
-	email = geofflanotte@gmail.com
+[include]
+  path = ~/.gitconfiglocal
+  path = ~/.gitconfigglobal
 [alias]
   co = checkout
   st = status
@@ -43,3 +43,4 @@
   tool = vimdiff
 [github]
   user = glanotte
+
