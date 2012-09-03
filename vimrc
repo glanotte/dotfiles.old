@@ -21,7 +21,7 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.pyc,*.swp " ignore these"
 " set the status line
 " set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 " Configure powerline
-let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
 let g:rails_statusline=1
 set laststatus=2
 set encoding=utf-8
@@ -63,7 +63,12 @@ map <leader>n :NERDTreeToggle <cr>
 map <leader>tl :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 
-"Love the cursor line
+" Code Folding
+set fdm=syntax
+set fdc=2
+" set the level high enough that nothing should be folded initially
+set fdl=10
+" Love the cursor line
 set cursorline
 "syntax for scss
 au BufRead,BufNewFile *.scss set filetype=scss
