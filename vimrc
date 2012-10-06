@@ -124,19 +124,23 @@ function! ShowRoutes()
   :normal dd
 endfunction
 
-" Command T configuration, thanks to Gary Bernhardt for this
-map <leader>gR :call ShowRoutes()<cr>
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+" CtrlP configuration, heavily inspired by Gary Bernhardt's Command-T config
+let g:ctrlp_working_path_mode = 'r'
+map <leader>gv :CtrlPClearCache<cr>:CtrlP app/views<cr>
+map <leader>gc :CtrlPClearCache<cr>:CtrlP app/views<cr>
+map <leader>gm :CtrlPClearCache<cr>:CtrlP app/models<cr>
+map <leader>gh :CtrlPClearCache<cr>:CtrlP app/helpers<cr>
+map <leader>ga :CtrlPClearCache<cr>:CtrlP app/assets<cr>
+map <leader>gs :CtrlPClearCache<cr>:CtrlP app/assets/stylesheets<cr>
+map <leader>gj :CtrlPClearCache<cr>:CtrlP app/assets/javascripts<cr>
+map <leader>gh :CtrlPClearCache<cr>:CtrlP lib<cr>
+map <leader>gp :CtrlPClearCache<cr>:CtrlP public<cr>
+map <leader>f :CtrlP<cr>
+map <leader>F :CtrlPClearCache<cr>:CtrlP<cr>
+
+" Rails specific files
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gR :call ShowRoutes()<cr>
 
 " Map ,e and ,v to open files in the same directory as the current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
