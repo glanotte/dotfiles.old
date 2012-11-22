@@ -44,3 +44,5 @@
 [github]
   user = glanotte
 
+[push]
+	default = matching
