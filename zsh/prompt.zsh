@@ -62,5 +62,12 @@ rvm_info() {
   echo " $($rvm_bin_path/rvm-prompt)" | sed -e "s/ruby-\(.*\)-p[^@]*/m\\1/" -e "s/jruby-\(.*\)/j\\1/"
 }
 
-export PROMPT=$'${PR_MAGENTA}%n${reset_color}/${PR_GREEN}%m$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
+machine_prefix(){
+  if [ -n "$SSH_CLIENT" ]; then
+    echo "${PR_MAGENTA}%n${reset_color}/${PR_GREEN}%m"
+  else
+    echo ""
+  fi
+}
+export PROMPT=$'$(machine_prefix)$(git_status)%{\e[0;%(?.32.31)m%}⁕%{\e[0m%} '
 export RPROMPT=$'%{\e[0;90m%}$(project_pwd)${PR_YELLOW}$(rvm_info)$(git_prompt_info)%{\e[0m%}'
