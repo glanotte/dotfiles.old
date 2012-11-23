@@ -10,6 +10,10 @@
 fpath=(/usr/local/share/zsh-completions $fpath)
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && .  ~/.localrc
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  . "$HOME/.rvm/scripts/rvm"
+  PATH=$PATH:$HOME/.rvm/bin
+elif [[ -s "/usr/local/rvm/scripts/rvm" ]]; then
+  . "/usr/local/rvm/scripts/rvm"
+  PATH=$PATH:/usr/local/rvm/bin
+fi
