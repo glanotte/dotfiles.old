@@ -7,6 +7,9 @@ alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
 
+#vi
+
+alias vi='vim'
 # git
 alias gl='git pull'
 alias gp='git push'
