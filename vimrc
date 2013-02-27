@@ -35,6 +35,12 @@ set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 " show a dot for trailing whitespace
 set listchars=tab:▸\ ,trail:·
 set list
+highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" the above flashes annoyingly while typing, be calmer in insert mode
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
