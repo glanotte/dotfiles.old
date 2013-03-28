@@ -73,3 +73,6 @@
 [submodule "vim/bundle/ctrip"]
 	path = vim/bundle/ctrip
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-handlebars"]
+	path = vim/bundle/vim-handlebars
+	url = git://github.com/nono/vim-handlebars.git
