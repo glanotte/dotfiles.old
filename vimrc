@@ -149,6 +149,7 @@ map <leader>gR :call ShowRoutes()<cr>
 " Map ,e and ,v to open files in the same directory as the current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
+map <leader>s :sp %%
 map <leader>v :view %%
 
 " Auto Indent
