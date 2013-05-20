@@ -55,9 +55,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/vim-jade"]
-	path = vim/bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "vim/bundle/vim-cocoa"]
 	path = vim/bundle/vim-cocoa
 	url = https://github.com/vim-scripts/cocoa.vim.git
@@ -70,6 +67,3 @@
 [submodule "vim/bundle/ctrip"]
 	path = vim/bundle/ctrip
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/vim-handlebars"]
-	path = vim/bundle/vim-handlebars
-	url = git://github.com/nono/vim-handlebars.git
