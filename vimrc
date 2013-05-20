@@ -63,12 +63,6 @@ set expandtab
 set showmatch
 set incsearch
 
-" NERDTree
-let NERDTreeShowBookmarks  = 1
-let NERDChristmasTree = 1
-let NERDTreeWinPos = "left"
-map <leader>n :NERDTreeToggle <cr>
-
 " TagList
 map <leader>tl :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
