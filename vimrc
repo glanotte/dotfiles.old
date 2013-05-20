@@ -4,6 +4,10 @@ call pathogen#infect()
 "Set leader key
 let mapleader = ","
 
+" Custom Leader Commands
+map <leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
+map <leader>np :sp ~/Dropbox/notes/project_notes.txt<cr>
+
 "Setting to allow clipboard access with p and y
 set clipboard=unnamed
 
