@@ -67,3 +67,6 @@
 [submodule "vim/bundle/ctrip"]
 	path = vim/bundle/ctrip
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = git://github.com/fsouza/go.vim.git
