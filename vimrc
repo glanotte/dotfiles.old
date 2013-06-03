@@ -80,6 +80,10 @@ au BufRead,BufNewFile *.scss set filetype=scss
 " Relative Line numbers, requires vim 7.3+
 set rnu
 
+" use absolute numbers in insert mode, trying this out
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set rnu
+
 set hlsearch
 
 " Don't use Ex mode, use Q for formatting
