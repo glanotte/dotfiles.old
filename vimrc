@@ -9,7 +9,9 @@ map <leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
 map <leader>np :sp ~/Dropbox/notes/project_notes.txt<cr>
 
 "Setting to allow clipboard access with p and y
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
 filetype plugin indent on
 filetype on  " Automatically detect file types.
