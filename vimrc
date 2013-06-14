@@ -79,6 +79,10 @@ set cursorline
 "syntax for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
+"
+ " Override filetype for handlebars+erb files
+  au BufNewFile,BufRead *.hbs.erb,*.handlebars.erb,*.hb.erb set ft=handlebars.eruby
+
 " Relative Line numbers, requires vim 7.3+
 set rnu
 
