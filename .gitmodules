@@ -13,9 +13,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/vim-cucumber"]
 	path = vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
@@ -76,3 +73,6 @@
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
