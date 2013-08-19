@@ -16,7 +16,7 @@ endif
 filetype plugin indent on
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
- 
+
 " Store temporary files in a central spot, thanks to Gary Bernhardt
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -26,8 +26,8 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.pyc,*.swp " ignore these"
 
 " set the status line
 " set statusline=%f%h%m%r%h%w%y\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
-" Configure powerline
-let g:Powerline_symbols = 'fancy'
+" Configure airline
+let g:airline_powerline_fonts = 1
 let g:rails_statusline=1
 set laststatus=2
 set encoding=utf-8
@@ -50,7 +50,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
- 
+
 " Have ctags look in gems.tags
 set tags+=gems.tags
 
