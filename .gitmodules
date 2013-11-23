@@ -76,3 +76,6 @@
 [submodule "vim/bundle/spacejam"]
 	path = vim/bundle/spacejam
 	url = https://github.com/rondale-sc/vim-spacejam
+[submodule "vim/bundle/vim-jasmine"]
+	path = vim/bundle/vim-jasmine
+	url = https://github.com/glanotte/vim-jasmine.git
