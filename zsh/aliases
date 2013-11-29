@@ -10,6 +10,8 @@ alias la='ls -A'
 #vi
 
 alias vi='vim'
+alias evi='vim -u ~/.essential.vim'
+
 # git
 alias gd='git diff'
 alias gci='git commit'
@@ -54,3 +56,4 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias bu="bundle update"
 alias bo="bundle outdated"
+
