@@ -15,9 +15,9 @@ Robby Russel - While I don't use oh-my-zsh, I have taken many many things from t
 Installation
 ------------
 
-  git clone git://github.com/glanotte/dotfiles ~/.dotfiles
-  cd ~/.dotfiles
-  rake install
+    git clone git://github.com/glanotte/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    rake install
 
 Prerequisites
 -------------
