@@ -1,6 +1,10 @@
 Geoff Lanotte Dot Files
+=======================
 
 These are config files to set up a system the way I like it.
+
+Thanks!
+-------
 
 I have run out of people to thank for this, but here is a non-exaustive list:
 
@@ -9,14 +13,18 @@ Robby Russel - While I don't use oh-my-zsh, I have taken many many things from t
 
 
 Installation
+------------
 
   git clone git://github.com/glanotte/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
 
-Prerequisites:
+Prerequisites
+-------------
 
   @tpope's Pathogen: https://github.com/tpope/vim-pathogen
 
-Troubleshooting:
+Troubleshooting
+---------------
+
   If the color schemes aren't loading when you start VIM, copy the colors subdirectory from the vim directory in this project to ~/.vim
