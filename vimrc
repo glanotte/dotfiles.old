@@ -80,15 +80,11 @@ set cursorline
 au BufRead,BufNewFile *.scss set filetype=scss
 
 "
- " Override filetype for handlebars+erb files
-  au BufNewFile,BufRead *.hbs.erb,*.handlebars.erb,*.hb.erb set ft=handlebars.eruby
+" Override filetype for handlebars+erb files
+au BufNewFile,BufRead *.hbs.erb,*.handlebars.erb,*.hb.erb set ft=handlebars.eruby
 
 " Relative Line numbers, requires vim 7.3+
 set rnu
-
-" use absolute numbers in insert mode, trying this out
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set rnu
 
 set hlsearch
 
