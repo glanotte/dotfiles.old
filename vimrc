@@ -175,6 +175,7 @@ endif
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType yaml set commentstring=#\ %s
+autocmd FileType c set commentstring=//\ %s
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Moves a variable declaration to an rspec let comment (Thanks Gary Bernhardt)
