@@ -1,9 +1,9 @@
-Geoff Lanotte Dot Files
+Ye Olde DotFiles
 =======================
 
-These are config files to set up a system the way I like it.
+This was my first iteration of dotfiles. I decided to move things to a new repo and start fresh. I do not plan to update this repository further, but leaving for posterity for the time being.
 
-Thanks!
+Thank!
 -------
 
 I have run out of people to thank for this, but here is a non-exaustive list:
